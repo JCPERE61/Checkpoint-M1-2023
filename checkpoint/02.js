@@ -25,8 +25,27 @@ const Stack = require("../DS").Stack;
 //  - Una propiedad "pantalonesRestantes" que sea un stack que contenga los pantalones restantes
 //  🟢 Retornar false si el stack viene vacío
 
+// 1.- Qué nos llega? Un arreglo con tallas de pantalones y una talla específica
+// 2.- Qué se debe hacer? Un Stack con los pantalones Encontrados y un arreglo con los pantalones Restantes
+// 3.- Cómo proceder?
+
 function apilarPantalones(array, talla) {
   // Tu código aquí:
+  var pantalonesEncontrados = new Stack();
+  var pantalonesRestantes = new Stack();
+  var obj = {};
+  for (let i=0; i<array.length;i++){
+    if (array[i] === talla){
+      pantalonesEncontrados.push(talla);
+    } else {
+      pantalonesRestantes.push(array[i]);
+    }
+  }
+  var tamano = pantalonesEncontrados.size();
+  if (tamano === 0) return false;
+  obj['pantalonesEncontrados'] = pantalonesEncontrados;
+  obj['pantalonesRestantes'] = pantalonesRestantes;
+  return obj;
 };
 
 

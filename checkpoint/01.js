@@ -32,8 +32,19 @@ const Queue = require("../DS").Queue;
 //  🟢 SI O SI necesitás utilizar una queue!
 // TIP: Chequear el archivo DS.js para ver la función constructora Queue, y ver sus métodos disponibles.
 
+// 1.- Qué nos llega? Una Queue con muchas camisetas en un array
+// 2.- Qué se debe hacer? Un objeto con las las propiedades y los valores correspondientes a cada elemento de la Queue
+// 3.- Cómo proceder?
+
 function guardarCamisetas(ropaQueue) {
   // Tu código aquí:
+  var ordClothes = {};
+  var sizecloth = ropaQueue.size();
+  for (let i=0;i<sizecloth;i++){
+    let item = ropaQueue.dequeue();
+    ordClothes[item] = item;
+  }
+  return ordClothes;
 };
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️

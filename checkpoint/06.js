@@ -16,8 +16,38 @@
 //  🟢 Implementar algún algoritmo de ordenamiento para ordenar el arreglo de MAYOR a MENOR
 //  🟢 NO utilizar el método sort de array!
 
+// 1.- Qué nos llega? Un array de objetos anidados con propiedades nombre y precio
+// 2.- Qué se debe hacer? Ordenar el array de acuerdo al precio de mayor a menor
+// 3.- Cómo proceder?
+
 function ordenarRopa(ropa) {
   // Tu código aquí:
+  let prices = [];
+  for (let i=0;i<ropa.length;i++){
+    prices.push(ropa[i].precio)
+  }
+  for(let i=0;i<prices.length;i++){
+    let mayor = i;
+    for(let j=i+1;j<prices.length;j++){
+      if (prices[mayor] < prices[j]) {
+        mayor = j;
+      }
+    }
+    if (i !== mayor){
+      let aux = prices[i];
+      prices[i] = prices[mayor];
+      prices[mayor] = aux;
+    }
+  }
+  let ordered = [];
+  for (let i=0;i<prices.length;i++) {
+    let j = 0;
+    while(prices[i] !==ropa[j].precio){
+      j = j+1;
+    }
+    ordered.push(ropa[j]);
+  }
+  return ordered;
 }
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️

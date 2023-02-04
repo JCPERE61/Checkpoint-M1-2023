@@ -20,8 +20,17 @@
 // 
 // Tip: Podés usar el operador delete para los objetos.
 
+// 1.- Qué nos llega? Un objeto de clientes que quieren ser atendidos
+// 2.- Qué se debe hacer? Recursivamente ir eliminando los clientes hasta dejar el objeto vacio.
+// 3.- Cómo proceder?
+
 function atenderClientes(clientes) {
   // Tu código aquí:
+  let key = Object.keys(clientes).length;
+  if (key === 0) return clientes;
+  delete clientes[key];
+  return atenderClientes(clientes);
+
 }
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️

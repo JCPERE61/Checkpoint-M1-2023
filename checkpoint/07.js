@@ -20,8 +20,24 @@ const { LinkedList } = require('../DS');
 // 🟢 Retornar un objeto con la prenda de ropa y su stock a modo de clave/valor mostrado en el ejemplo arriba
 // 🟢 Si la lista está vacía retornar un mensaje que diga exactamente: "No hay stock para migrar"
 
+// 1.- Qué nos llega? Una lista enlazada con las prendas y su stock
+// 2.- Qué se debe hacer? Devolver un objeto con el nombre y stock en modo de clave/valor
+// 3.- Cómo proceder?
+
+
+
 LinkedList.prototype.migrarStock = function () {
   // Tu código aquí:
+  if (this.head === null) return "No hay stock para migrar";
+  var obj = {};
+  var current = this.head;
+  while(current !== null){
+    let prop1 = current.value['nombre'];
+    let prop2 = current.value['stock'];
+    obj[prop1] = prop2;
+    current = current.next;
+  }
+  return obj;
 }
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
