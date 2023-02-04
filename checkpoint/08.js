@@ -23,14 +23,31 @@ const { LinkedList } = require('../DS');
 // 🟢 Si el arreglo viene vacío retornar la LinkedList COMPLETA.
 // Tip: Tanto las LinkedList como los arreglos, contendrán siempre strings.
 
+// 1.- Qué nos llega? Un arreglo con las prendas que se deben eliminar de la lista entregada.
+// 2.- Qué se debe hacer? Devolver otra lista sin las prendas que constan en el arreglo
+// 3.- Cómo proceder?
+
 LinkedList.prototype.tacharLista = function(lista) {
   // Tu código aquí:
+let newList = new LinkedList();
+if (lista.length === 0) return this;
+ let current = this.head;
+  while (current) {
+    for (let i=0;i<lista.length;i++) {
+      if (current.value !== lista[i]) {
+        newList.add(lista[i]);
+        current.remove();
+      } else {current = current.next;}
+    }
+    j = j +1;
+  }
+return newList;
 }
-  
-  
+
+ 
 
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {
-  LinkedList
+//  LinkedList
 };

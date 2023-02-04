@@ -35,8 +35,19 @@ const { BinarySearchTree } = require("../DS");
 // ACLARACIÓN: Dentro del árbol se encuentran objetos, tal como lo muestra el ejemplo más arriba!
 // TIP: Podés usar default parameters para ayudarte.
 
+// 1.- Qué nos llega? Una cadena de texto que representa la prenda a encontrar
+// 2.- Qué se debe hacer? Devolver un arreglo con el nombre de la prenda repetida las veces que esta en el arbol
+// 3.- Cómo proceder?
+
 BinarySearchTree.prototype.obtenerPrendas = function (string) {
   // Tu código aquí:
+
+  let clothArr = [];
+  
+
+
+
+  
 };
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {

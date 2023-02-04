@@ -18,11 +18,26 @@
 //
 // TIP: tambien podes usar un rest parameter.
 
+// 1.- Qué nos llega? Un arreglo de objetos anidados con o sin su estado
+// 2.- Qué se debe hacer? Un arreglo que sólamente contenga los de LIQUIDACION
+// 3.- Cómo proceder?
+
 function liquidacion(array) {
   // Tu código aquí:
+  if (array.length === 0) return "No hay prendas en liquidación";
+  let i = array.length-1;
+  while (i > -1){
+  let obj1 = Object.keys(array[i])[0];
+  let obj2 = array[i][obj1];
+  if (Object.entries(obj2).length > 0){
+   if (Object.keys(obj2)[0] === 'LIQUIDACION'){
+      array.pop();}
+  }
+  i = i - 1;  }
+  return array;
 }
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {
-  liquidacion,
+ liquidacion,
 };
